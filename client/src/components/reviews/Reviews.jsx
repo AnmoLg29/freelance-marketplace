@@ -20,7 +20,7 @@ const Reviews = ({ gigId }) => {
     },
     onSuccess:()=>{
       queryClient.invalidateQueries(["reviews"])
-    }
+    },
   });
 
   const handleSubmit = (e) => {
