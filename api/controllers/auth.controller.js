@@ -39,6 +39,8 @@ export const login = async (req, res, next) => {
     res
       .cookie("accessToken", token, {
         httpOnly: true,
+        sameSite: "none",
+      secure: true,
       })
       .status(200)
       .send(info);
@@ -50,6 +52,7 @@ export const login = async (req, res, next) => {
 export const logout = async (req, res) => {
   res
     .clearCookie("accessToken", {
+      httpOnly: true,
       sameSite: "none",
       secure: true,
     })
